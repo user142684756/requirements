@@ -1,0 +1,10 @@
+#!/bin/bash
+
+G='\033[1;32m'
+B='\033[1;36m'
+NC='\033[1;0m'
+
+echo -e " [${B}*${NC}] Enabling Monitor Mode"
+airmon-ng check kill > /dev/null
+airmon-ng start wlan0 > /dev/null
+echo -e " [${G}+${NC}] Monitor Mode Enabled"
