@@ -1,0 +1,11 @@
+#!/bin/bash
+
+G='\033[1;32m'
+B='\033[1;36m'
+NC='\033[1;0m'
+
+echo -e " [${B}*${NC}] Disabling Monitor Mode"
+airmon-ng stop wlan0mon > /dev/null
+service networking restart
+service network-manager restart
+echo -e " [${G}+${NC}] Monitor Mode Disabled"
